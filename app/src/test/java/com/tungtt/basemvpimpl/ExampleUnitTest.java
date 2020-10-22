@@ -1,4 +1,4 @@
-package com.tungtt.mylibraries;
+package com.tungtt.basemvpimpl;
 
 import org.junit.Test;
 

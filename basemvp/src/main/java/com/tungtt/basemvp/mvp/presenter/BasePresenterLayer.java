@@ -33,11 +33,11 @@ public abstract class BasePresenterLayer<V extends IBaseViewLayer, M extends IBa
         this.mModel = model;
     }
 
-    public void initViewLayer(V view) {
-        this.mView = view;
-    }
-
     public V mView() {
         return mView;
+    }
+
+    public void initViewLayer(V view) {
+        this.mView = view;
     }
 }

@@ -1,3 +1,3 @@
 include ':basemvp'
-include ':app'
+include ':app', ':basemvp'
 rootProject.name = "MyLibraries"
