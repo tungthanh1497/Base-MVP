@@ -11,4 +11,6 @@ public interface IBaseModelLayer<P extends IBasePresenterLayer> {
     P mPresenter();
 
     void initPresenterLayer(P presenter);
+
+    void init();
 }

@@ -35,7 +35,8 @@ public abstract class SimpleFragment extends Fragment {
     }
 
     private void initialize(View view) {
-        bindViews(view);
+        initView(view);
+        initModel();
         init(view);
     }
 
@@ -46,7 +47,9 @@ public abstract class SimpleFragment extends Fragment {
 
     public abstract void onReceiveData(@NonNull Bundle data);
 
-    public abstract void bindViews(View view);
+    public abstract void initView(View view);
+
+    public abstract void initModel();
 
     public abstract void init(View view);
 

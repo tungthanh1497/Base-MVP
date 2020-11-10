@@ -11,12 +11,15 @@ import com.tungtt.basemvp.mvp.presenter.IBasePresenterLayer;
  * On Wed, 21 Oct 2020 - 16:38
  */
 public interface IBaseViewLayer<P extends IBasePresenterLayer> {
+
+    P mPresenter();
+
+    void initPresenterLayer(P presenter);
+
     @LayoutRes
     int getLayoutRes();
 
     void bindViews(View view);
 
-    P mPresenter();
-
-    void initPresenterLayer(P presenter);
+    void init();
 }

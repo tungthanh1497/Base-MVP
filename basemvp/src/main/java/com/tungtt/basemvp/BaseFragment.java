@@ -14,7 +14,13 @@ public abstract class BaseFragment<V extends IBaseViewLayer, M extends IBaseMode
         extends BasePresenterLayer<V, M> {
 
     @Override
-    public void bindViews(View view) {
+    public void initView(View view) {
         mView().bindViews(view);
+        mView().init();
+    }
+
+    @Override
+    public void initModel() {
+        mModel().init();
     }
 }
