@@ -31,6 +31,7 @@ public abstract class BasePresenterLayer<V extends IBaseViewLayer, M extends IBa
 
     public void initModelLayer(M model) {
         this.mModel = model;
+        this.mModel.initPresenterLayer(this);
     }
 
     public V mView() {
@@ -39,5 +40,6 @@ public abstract class BasePresenterLayer<V extends IBaseViewLayer, M extends IBa
 
     public void initViewLayer(V view) {
         this.mView = view;
+        this.mView.initPresenterLayer(this);
     }
 }

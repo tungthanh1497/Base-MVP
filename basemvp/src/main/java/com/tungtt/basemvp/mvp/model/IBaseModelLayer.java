@@ -7,4 +7,8 @@ import com.tungtt.basemvp.mvp.presenter.IBasePresenterLayer;
  * On Wed, 21 Oct 2020 - 16:38
  */
 public interface IBaseModelLayer<P extends IBasePresenterLayer> {
+
+    P mPresenter();
+
+    void initPresenterLayer(P presenter);
 }

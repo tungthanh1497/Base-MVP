@@ -8,4 +8,14 @@ import com.tungtt.basemvp.mvp.presenter.IBasePresenterLayer;
  */
 public abstract class BaseModelLayer<P extends IBasePresenterLayer>
         implements IBaseModelLayer<P> {
+
+    private P mPresenter;
+
+    public P mPresenter() {
+        return mPresenter;
+    }
+
+    public void initPresenterLayer(P presenter) {
+        this.mPresenter = presenter;
+    }
 }

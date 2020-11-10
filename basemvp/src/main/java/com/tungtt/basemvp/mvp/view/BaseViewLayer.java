@@ -9,4 +9,14 @@ import com.tungtt.basemvp.mvp.presenter.IBasePresenterLayer;
 public abstract class BaseViewLayer<P extends IBasePresenterLayer>
         implements IBaseViewLayer<P> {
 
+    private P mPresenter;
+
+    public P mPresenter() {
+        return mPresenter;
+    }
+
+    public void initPresenterLayer(P presenter) {
+        this.mPresenter = presenter;
+    }
+
 }

@@ -15,4 +15,8 @@ public interface IBaseViewLayer<P extends IBasePresenterLayer> {
     int getLayoutRes();
 
     void bindViews(View view);
+
+    P mPresenter();
+
+    void initPresenterLayer(P presenter);
 }
