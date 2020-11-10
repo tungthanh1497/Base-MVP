@@ -18,5 +18,6 @@ public interface IMainContract {
     }
 
     interface Presenter extends IBasePresenterLayer<View, Model> {
+        void onTvClicked();
     }
 }

@@ -15,6 +15,11 @@ public class MainModel extends BaseModelLayer<IMainContract.Presenter>
         return new MainModel();
     }
 
+    @Override
+    public void init() {
+
+    }
+
     public boolean isEven() {
         int random = new Random().nextInt(10);
         return random % 2 == 0;

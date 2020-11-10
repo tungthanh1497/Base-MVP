@@ -28,6 +28,11 @@ public class MainFragment extends BaseFragment<IMainContract.View, IMainContract
 
     @Override
     public void init(View view) {
+        onTvClicked();
+    }
+
+    @Override
+    public void onTvClicked() {
         if (mModel().isEven()) {
             mView().updateText("Even");
         } else {

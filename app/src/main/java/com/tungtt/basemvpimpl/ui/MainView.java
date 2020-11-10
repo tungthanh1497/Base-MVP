@@ -13,7 +13,7 @@ import com.tungtt.basemvpimpl.R;
 public class MainView extends BaseViewLayer<IMainContract.Presenter>
         implements IMainContract.View {
 
-    TextView tv;
+    private TextView tv;
 
     public static MainView newInstance() {
         return new MainView();
@@ -27,6 +27,15 @@ public class MainView extends BaseViewLayer<IMainContract.Presenter>
     @Override
     public void bindViews(View view) {
         tv = view.findViewById(R.id.message);
+    }
+
+    @Override
+    public void init() {
+        implementListeners();
+    }
+
+    private void implementListeners() {
+        tv.setOnClickListener(v -> mPresenter().onTvClicked());
     }
 
     @Override
