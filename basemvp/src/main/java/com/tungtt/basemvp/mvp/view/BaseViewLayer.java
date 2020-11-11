@@ -1,5 +1,9 @@
 package com.tungtt.basemvp.mvp.view;
 
+import android.app.Activity;
+
+import androidx.fragment.app.Fragment;
+
 import com.tungtt.basemvp.mvp.presenter.IBasePresenterLayer;
 
 /**
@@ -19,4 +23,14 @@ public abstract class BaseViewLayer<P extends IBasePresenterLayer>
         this.mPresenter = presenter;
     }
 
+    @Override
+    public Activity mActivity() {
+        if (mPresenter instanceof Activity) {
+            return (Activity) mPresenter;
+        } else if (mPresenter instanceof Fragment) {
+            return ((Fragment) mPresenter).getActivity();
+        } else {
+            return null;
+        }
+    }
 }

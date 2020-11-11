@@ -1,5 +1,6 @@
 package com.tungtt.basemvp.mvp.view;
 
+import android.app.Activity;
 import android.view.View;
 
 import androidx.annotation.LayoutRes;
@@ -22,4 +23,6 @@ public interface IBaseViewLayer<P extends IBasePresenterLayer> {
     void bindViews(View view);
 
     void init();
+
+    Activity mActivity();
 }
