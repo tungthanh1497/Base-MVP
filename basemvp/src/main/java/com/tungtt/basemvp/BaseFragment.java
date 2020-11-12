@@ -1,5 +1,6 @@
 package com.tungtt.basemvp;
 
+import android.view.KeyEvent;
 import android.view.View;
 
 import com.tungtt.basemvp.mvp.model.IBaseModelLayer;
@@ -15,6 +16,7 @@ public abstract class BaseFragment<V extends IBaseViewLayer, M extends IBaseMode
 
     @Override
     public void initView(View view) {
+        handlePhysicalBackClicked(view);
         mView().bindViews(view);
         mView().init();
     }
@@ -22,5 +24,27 @@ public abstract class BaseFragment<V extends IBaseViewLayer, M extends IBaseMode
     @Override
     public void initModel() {
         mModel().init();
+    }
+
+    /**
+     * Handle event click on physical back button
+     *
+     * @param view: current screen
+     */
+    private void handlePhysicalBackClicked(View view) {
+        if (view != null) {
+            view.setFocusableInTouchMode(true);
+            view.requestFocus();
+            view.setOnKeyListener(new View.OnKeyListener() {
+                @Override
+                public boolean onKey(View v, int keyCode, KeyEvent event) {
+                    if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
+                        back();
+                        return true;
+                    }
+                    return false;
+                }
+            });
+        }
     }
 }
