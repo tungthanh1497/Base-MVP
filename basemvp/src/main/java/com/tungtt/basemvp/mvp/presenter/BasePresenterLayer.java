@@ -22,7 +22,9 @@ public abstract class BasePresenterLayer<V extends IBaseViewLayer, M extends IBa
 
     @Override
     public void back() {
-
+        if (getActivity() != null) {
+            getActivity().getSupportFragmentManager().popBackStack();
+        }
     }
 
     public M mModel() {
