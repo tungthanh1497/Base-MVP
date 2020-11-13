@@ -15,9 +15,9 @@ public abstract class SimpleFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (savedInstanceState != null) {
-            setTagScreen(savedInstanceState);
-            onReceiveData(savedInstanceState);
+        if (getArguments() != null) {
+            setTagScreen(getArguments());
+            onReceiveData(getArguments());
         }
     }
 
