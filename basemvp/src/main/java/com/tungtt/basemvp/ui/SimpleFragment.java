@@ -16,6 +16,7 @@ public abstract class SimpleFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (savedInstanceState != null) {
+            setTagScreen(savedInstanceState);
             onReceiveData(savedInstanceState);
         }
     }
@@ -52,5 +53,7 @@ public abstract class SimpleFragment extends Fragment {
     public abstract void initModel();
 
     public abstract void init(View view);
+
+    public abstract void setTagScreen(@NonNull Bundle data);
 
 }
